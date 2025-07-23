@@ -20,11 +20,8 @@ return new class () extends Migration {
             $table->string('status')->default('pending');
             $table->foreignId('shipping_address_id')
                   ->constrained('addresses') 
-                  ->onDelete('restrict');
-            $table->string('payment_method')->nullable();
-            $table->string('payment_status')->default('unpaid');
-            $table->string('transaction_id')->nullable();
-
+                  ->onDelete('restrict');   
+                  
             $table->timestamps();
             $table->softDeletes();
         });
